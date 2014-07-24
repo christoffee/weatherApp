@@ -44,7 +44,7 @@
 
 </head>
 
-<body ontouchstart ng-controller="MainCtrl">
+<body ontouchstart ng-controller="WeatherAppCtrl">
 
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
@@ -64,17 +64,17 @@
 
   <!-- build:js scripts/components.min.js -->
   <!-- bower:js -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
   <!-- endbower -->
 
   <!-- endbuild -->
 
   <!-- build:js scripts/app.min.js -->
   <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/controllers.js"></script>
+  <script src="scripts/services/services.js"></script>
   <!-- endbuild -->
 
 </body>

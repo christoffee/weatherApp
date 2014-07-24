@@ -45,6 +45,10 @@
     "grunt-rev": "^0.1.0",
     "grunt-usemin": "^2.1.1",
     "jshint-stylish": "^0.2.0",
-    "load-grunt-tasks": "^0.4.0"
+    "load-grunt-tasks": "^0.4.0",
+    "karma-jasmine": "^0.1.5",
+    "requirejs": "^2.1.14",
+    "karma-requirejs": "^0.2.2",
+    "karma-chrome-launcher": "^0.1.4"
   }
 }

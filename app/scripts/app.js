@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('christoffee.Weatherapp', ['ngAnimate', 'ngRoute'])
+var weatherApp = angular.module('christoffee.Weatherapp', ['ngRoute','ngResource']);
 
-  .constant('version', 'v0.1.0')
+  weatherApp.constant('version', 'v0.1.0');
 
-  .config(function($locationProvider, $routeProvider) {
+  weatherApp.config(function($locationProvider, $routeProvider) {
 
     $locationProvider.html5Mode(false);
-
+    
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html'

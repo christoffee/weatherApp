@@ -306,16 +306,16 @@ module.exports = function(grunt) {
         'copy:styles'
       ],
       dist: [
-        'copy:styles',
-        'imagemin',
-        'svgmin'
+        'copy:styles'
+        //'imagemin',
+        //'svgmin'
       ]
     },
 
     // Test settings
     karma: {
       options: {
-        configFile: 'test/karma.conf.js',
+        configFile: 'my.conf.js',
       },
       unit: {
         singleRun: true
@@ -368,8 +368,7 @@ module.exports = function(grunt) {
     'cssmin',
     'uglify',
     'rev',
-    'usemin',
-    'htmlmin'
+    'usemin'
   ]);
 
   grunt.registerTask('default', [
