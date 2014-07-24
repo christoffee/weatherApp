@@ -12,6 +12,7 @@ a:hover {
 
 h1{
     color: #EDE574;
+    height:100px;
 }
 
 h3{
@@ -40,7 +41,7 @@ font-size: 2em;
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #ADD6BC;
   border: 2px solid #E1F5C4;
-  margin:0;
+  margin:5px;
 }
 
 .btn.active {
@@ -82,40 +83,10 @@ body {
 
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+  padding: 0 30px;
 }
 
 
-/*
- * Header
- */
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-left: 0;
-  padding-right: 0;
-  font-size:2em;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: rgba(255,255,255,.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
-}
 
 @media (min-width: 768px) {
   .masthead-brand {
@@ -199,4 +170,17 @@ width: 600px;
 
 .footer i{
   font-size: 16px;
+  margin-top: 30px
+}
+.searchForm {
+height: 100px;
+width: 22em;
+margin: 0 auto;
+}
+.alert-warning{
+  max-height: 50px;
+  clear: left;
+}
+.col-lg-12{
+  clear:left;
 }

@@ -44,26 +44,24 @@
 
 </head>
 
-<body ontouchstart ng-controller="WeatherAppCtrl">
-
+<body ontouchstart>
   <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-      <div class="cover-container">
-        <div class="masthead clearfix">
-          <div class="inner" ng-include="'views/partials/header.html'"></div>
-        </div>
-        <div class="inner cover">
-          <div class="inner" ng-view></div>
-        </div>
-        <div class="mastfoot">
-          <div class="inner" ng-include="'views/partials/footer.html'"></div>
-        </div>
+    <div class="cover-container row">
+      <div class="">
+        <div class="inner" ng-include="'views/partials/header.html'"></div>
+      </div>
+      <div class="inner cover" >
+        <div class="inner" ng-view></div>
+      </div>
+      <div class="">
+        <div  ng-include="'views/partials/footer.html'"></div>
       </div>
     </div>
   </div>
 
   <!-- build:js scripts/components.min.js -->
   <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>

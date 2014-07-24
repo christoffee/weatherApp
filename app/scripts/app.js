@@ -15,9 +15,6 @@ var weatherApp = angular.module('christoffee.Weatherapp', ['ngRoute','ngResource
       .when('/weather', {
         templateUrl: 'views/weather.html'
       })
-      .when('/settings', {
-        templateUrl: 'views/settings.html'
-      })
       .otherwise({
         redirectTo: '/'
       });

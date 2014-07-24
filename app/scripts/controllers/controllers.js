@@ -1,47 +1,53 @@
 'use strict';
 
-angular.module('christoffee.Weatherapp')
-
-  .controller('WeatherAppCtrl', function($scope, Post) {
-
+weatherApp.controller('WeatherAppCtrl', function($scope, Post) {
+    $scope.noResults = false;
+    $scope.userSearchText = '';
     $scope.data = {};
+    $scope.recentData = {};
     
     /*
     * Updates the query to the rest resource with the current
     * location and sets the return format to json.
     */
-    $scope.updateSearch = function () {
-      Post.query({'q':$scope.getQuery(),'format':'json'}, {}, function (response) {
+    $scope.updateSearch = function (query) {
+      Post.query({'q':query,'format':'json'}, {}, function (response) {
         $scope.data = response;
+        $scope.noResults = !response.query.count;
+
+        if(response.query.count === 1 && !response.query.results.channel){
+            $scope.setLocation();
+            $scope.getWeather();
+        }
       });
     };
 
     //Sets the loaction and and calls the updateSearch()
     $scope.setLocation = function(locationID){
         $scope.weatherLocation = locationID;
-        $scope.updateSearch();
+        $scope.updateSearch($scope.getWeather());
     };
 
-    //Checks to see if the locations is set, returns boolean
-    $scope.locationIsSet = function(locationID){
-        this.weatherLocation = $scope.weatherLocation || 44418;
-        return this.weatherLocation === locationID;
+    //clear and cache data
+    $scope.clearData = function(){
+        $scope.recentData = $scope.data;
+        $scope.data = {};
     };
 
     //returns the query with the current loaction
-    $scope.getQuery = function(){
+    $scope.getWeather = function(){
+        $scope.recentData = {};
         this.weatherLocation = $scope.weatherLocation || 44418;
         return 'select item from weather.forecast where woeid=' + this.weatherLocation;
     };
 
-    // TODO: add functionality to change the tempurature unit.
-    // $scope.setUnit = function(UnitID){
-    //     $scope.weatherUnit = UnitID;
-    // }
+    //Search locations calls the updateSearch()
+    $scope.searchLocations = function(){
+        $scope.updateSearch($scope.getLocations());
+    };
 
-    // $scope.unitIsSet = function(UnitID){
-    //     $scope.weatherUnit = $scope.weatherUnit || 'c';
-    //     return $scope.weatherUnit === UnitID;
-    // }
-    
+    //returns the query with the users search loaction
+    $scope.getLocations = function(){
+        return 'select * from geo.places where text="' + $scope.userSearchText + '"';
+    };
   });

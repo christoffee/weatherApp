@@ -315,7 +315,7 @@ module.exports = function(grunt) {
     // Test settings
     karma: {
       options: {
-        configFile: 'my.conf.js',
+        configFile: 'karma.conf.js',
       },
       unit: {
         singleRun: true
@@ -375,6 +375,10 @@ module.exports = function(grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('unit_test', [
+    'karma'
   ]);
 
 };
