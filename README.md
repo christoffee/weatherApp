@@ -1,8 +1,10 @@
 # Weatherapp
 
-Yet another amazing AngularJS app
+A simple weather app using yahoo weather service and angularjs.
 
 ## Getting Started
+
+Search for a town, state, city etc...
 
 ## Documentation
 _(Coming soon)_
